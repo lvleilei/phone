@@ -1,0 +1,154 @@
+//.page1 {
+//	.box1 {
+//		width: 100%;
+//		height: 300px;
+//		background-color: pink;
+//	}
+//}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+html,body{
+  height: 100%;
+  font-size: 20px;
+}
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  .swiper-wrapper {
+	width: 100%;
+	height: 100%;
+	.swiper-slide{
+	  width: 100%;
+	  height: 100%;
+
+	}
+  }
+}
+
+//第一屏
+.page1 {
+  background: url(../images/bg1.png) no-repeat,
+              url(../images/bg2.jpg) no-repeat;
+  background-size: cover;
+  //个人简历
+  .resume {
+    box-sizing: border-box;
+    width: 70%;
+    height: 10%;
+    //background-color: pink;
+    text-align: center;
+    padding-top: 5%;
+    margin: 25% 15%;
+    border-bottom: 1px solid red;
+    transform: translateX(150%);
+  }
+
+}
+//第一屏动画
+.page1.current {
+  .resume {
+    transition: all 1s;
+    transform: translateX(0);
+  }
+}
+
+
+
+//第二屏
+.page2{
+  background-color: skyblue;
+  position: relative;
+  perspective: 300px;
+  //遮罩层
+  .msk1{
+    position: absolute;
+    width: 70%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.6;
+    text-shadow: 1px 1px 1px #fff   ;
+    z-index:2;
+    transform: translateX(-100%);
+  }
+  //信息部分
+  .info {
+    position: absolute;
+    z-index:3;
+    color: #fff;
+    p {
+      margin-top: 40/20rem;
+      transform: translateX(-100%);
+    }
+  }
+  img {
+    width: 100%;
+    transform: translateZ(-1200px);
+  }
+}
+//第二屏动画
+.page2.current {
+  //遮罩层
+  .msk1{
+    transform: translateX(0);
+    transition:all 1.5s 1s;
+  }
+  //信息部分
+  .info {
+    p {
+      transform: translateX(0);
+      transition: all 1s 1s;
+      &:nth-child(odd) {
+        transition: all 1s 2s;
+      }
+    }
+
+  }
+  img {
+    transition: all 1.5s;
+    transform: translateZ(0);
+  }
+
+}
+
+//第三屏
+.page3 {
+  background: url(../images/bg3.jpg);
+  background-size: cover;
+  position: relative;
+  .info3 {
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    p {
+      margin-top: 40/20rem;
+      transform: translateX(-1000%);
+    }
+  }
+}
+//第三屏动画
+.page3.current{
+  .info3 {
+    p {
+      transform: translateX(0);
+      &:nth-child(2) {
+        transition: all 0.5s;
+      }
+      &:nth-child(3) {
+        transition: all 0.5s 1s;
+      }
+      &:nth-child(4) {
+        transition: all 0.5s 1.5s;
+      }
+    }
+
+  }
+}
+//第四屏
+//第四屏动画
+//第五屏
+//第五屏动画
+//第六屏
+//第六屏动画

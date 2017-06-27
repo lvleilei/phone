@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+  font-size: 20px;
+}
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+.swiper-container .swiper-wrapper {
+  width: 100%;
+  height: 100%;
+}
+.swiper-container .swiper-wrapper .swiper-slide {
+  width: 100%;
+  height: 100%;
+}
+.page1 {
+  background: url(../images/bg1.png) no-repeat, url(../images/bg2.jpg) no-repeat;
+  background-size: cover;
+}
+.page1 .resume {
+  box-sizing: border-box;
+  width: 70%;
+  height: 10%;
+  text-align: center;
+  padding-top: 5%;
+  margin: 25% 15%;
+  border-bottom: 1px solid red;
+  transform: translateX(150%);
+}
+.page1.current .resume {
+  transition: all 1s;
+  transform: translateX(0);
+}
+.page2 {
+  background-color: skyblue;
+  position: relative;
+  perspective: 300px;
+}
+.page2 .msk1 {
+  position: absolute;
+  width: 70%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.6;
+  text-shadow: 1px 1px 1px #fff   ;
+  z-index: 2;
+  transform: translateX(-100%);
+}
+.page2 .info {
+  position: absolute;
+  z-index: 3;
+  color: #fff;
+}
+.page2 .info p {
+  margin-top: 2rem;
+  transform: translateX(-100%);
+}
+.page2 img {
+  width: 100%;
+  transform: translateZ(-1200px);
+}
+.page2.current .msk1 {
+  transform: translateX(0);
+  transition: all 1.5s 1s;
+}
+.page2.current .info p {
+  transform: translateX(0);
+  transition: all 1s 1s;
+}
+.page2.current .info p:nth-child(odd) {
+  transition: all 1s 2s;
+}
+.page2.current img {
+  transition: all 1.5s;
+  transform: translateZ(0);
+}
+.page3 {
+  background: url(../images/bg3.jpg);
+  background-size: cover;
+  position: relative;
+}
+.page3 .info3 {
+  position: absolute;
+  top: 20%;
+  left: 30%;
+}
+.page3 .info3 p {
+  margin-top: 2rem;
+  transform: translateX(-1000%);
+}
+.page3.current .info3 p {
+  transform: translateX(0);
+}
+.page3.current .info3 p:nth-child(2) {
+  transition: all 0.5s;
+}
+.page3.current .info3 p:nth-child(3) {
+  transition: all 0.5s 1s;
+}
+.page3.current .info3 p:nth-child(4) {
+  transition: all 0.5s 1.5s;
+}
